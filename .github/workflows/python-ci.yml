@@ -21,8 +21,12 @@ jobs:
       - name: Static checks
         run: python3 -m flake8 && python -m mypy src
       - name: Tests
-        run: python3 -m unittest discover
+        run: coverage run --source=. -m unittest discover && coverage xml -o test/data/out/coverage.xml
         if: success() || failure() # run even if the previous step fails
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: test/data/out/coverage.xml
       - name: Publish tests artifacts
         uses: actions/upload-artifact@v1
         with:
