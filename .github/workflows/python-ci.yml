@@ -1,6 +1,6 @@
 # credit: https://docs.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Pyhton CI
+name: Python CI
 
 on: [push]
 

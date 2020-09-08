@@ -1,7 +1,7 @@
 # Topological Sorting
 Depth First Search implementation of topological sorting written in Python
 
-[![Actions Status](https://github.com/zuevval/topological-sorting/Python%20CI/badge.svg)](https://github.com/zuevval/topological-sorting/actions)
+[![Actions Status](https://github.com/zuevval/topological-sorting/workflows/Python%20CI/badge.svg)](https://github.com/zuevval/topological-sorting/actions)
 
 ## Requirements
 - Python 3.8.x: [get at python.org](https://www.python.org/downloads/)
