@@ -22,7 +22,7 @@ cd topological-sorting
 ```
 If you wish to run tests and static code checks, install also dependencies for tests:
 ```
-pip install src/requirements.txt
+pip install test/requirements.txt
 ```
 
 ## Usage
