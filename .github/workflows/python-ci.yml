@@ -7,6 +7,8 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      OUT_PATH: test/data/out
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python 3.8
@@ -19,17 +21,17 @@ jobs:
           pip3 install -r src/requirements.txt
           pip3 install -r test/requirements.txt
       - name: Static checks
-        run: python3 -m flake8 && python -m mypy src
+        run: python3 -m flake8 && python -m mypy src # flake8 settings in [ROOT]/tox.ini
       - name: Tests
-        run: coverage run --source=. -m unittest discover && coverage xml -o test/data/out/coverage.xml
+        run: coverage run --source=. -m unittest discover && coverage xml -o $OUT_PATH/coverage.xml
         if: success() || failure() # run even if the previous step fails
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
-          file: test/data/out/coverage.xml
+          file: $OUT_PATH/coverage.xml
       - name: Publish tests artifacts
         uses: actions/upload-artifact@v1
         with:
           name: tests output
-          path: test/data/out
+          path: ${{ env.OUT_PATH }}
         if: success() || failure()

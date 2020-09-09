@@ -26,4 +26,15 @@ pip install test/requirements.txt
 ```
 
 ## Usage
-`TODO`
+### Application
+`TODO write usage`
+
+### Running tests
+- set up environmental variable `OUT_PATH` for output files, e. g.
+```
+export OUT_PATH=test/data/out
+```
+- run all tests with `unittest.discover`:
+```
+python -m unittest discover
+```
