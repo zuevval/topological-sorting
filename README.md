@@ -1,6 +1,6 @@
 # Topological Sorting
 
-[![Actions Status](https://github.com/zuevval/topological-sorting/workflows/Python%20CI/badge.svg)](https://github.com/zuevval/topological-sorting/actions)
+[![Actions Status](https://github.com/zuevval/topological-sorting/workflows/Python%20CI/badge.svg?branch=develop)](https://github.com/zuevval/topological-sorting/actions)
 [![Code Coverage](https://img.shields.io/codecov/c/github/zuevval/topological-sorting)](https://codecov.io/gh/zuevval/topological-sorting)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![HitCount](http://hits.dwyl.com/zuevval/topological-sorting.svg)](http://hits.dwyl.com/zuevval/topological-sorting)
