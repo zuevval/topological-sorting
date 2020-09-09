@@ -7,6 +7,8 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      OUT_DIR: test/data/out
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python 3.8
@@ -18,8 +20,6 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install -r src/requirements.txt
           pip3 install -r test/requirements.txt
-      - name: Set up environment variables
-        run: export OUT_DIR="test/data/out"
       - name: Static checks
         run: python3 -m flake8 && python -m mypy src # flake8 settings in [ROOT]/tox.ini
       - name: Tests
