@@ -30,9 +30,9 @@ pip install test/requirements.txt
 `TODO write usage`
 
 ### Running tests
-- set up environmental variable `OUT_DIR` for output files, e. g.
+- set up environmental variable `OUT_PATH` for output files, e. g.
 ```
-export OUT_DIR=test/data/out
+export OUT_PATH=test/data/out
 ```
 - run all tests with `unittest.discover`:
 ```
