@@ -14,8 +14,6 @@ def main():
     output_filename = args[output_argname] if output_argname in args else "./output.txt"
 
     result = sorting(Graph.loadtxt(input_filename))
-    print("-----")
-    print(np.array(list(result)))
     np.savetxt(output_filename, np.array(list(result)), fmt="%d")
 
 

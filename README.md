@@ -5,13 +5,13 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![HitCount](http://hits.dwyl.com/zuevval/topological-sorting.svg)](http://hits.dwyl.com/zuevval/topological-sorting)
 
-Depth First Search implementation of topological sorting written in Python
+Depth First Search implementation of topological sorting written in Python 3
 
 ## Requirements
 - Python 3.8.x: [get at python.org](https://www.python.org/downloads/)
 
 ## Installation
-- Clone this repository:
+- Download these files from GitHub or clone this repository via https:
 ```
 git clone https://github.com/zuevval/topological-sorting.git
 cd topological-sorting
