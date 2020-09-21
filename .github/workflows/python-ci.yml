@@ -28,7 +28,7 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
-          file: $OUT_PATH/coverage.xml
+          file: ${{ env.OUT_PATH }}/coverage.xml
       - name: Publish tests artifacts
         uses: actions/upload-artifact@v1
         with:
