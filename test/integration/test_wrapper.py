@@ -7,10 +7,13 @@ from pathlib import Path
 class TestCaseWrapper(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        assert "OUT_PATH" in os.environ, "'OUT_PATH' (output directory) must be among environment variables"
-        cls.OutDir = Path(os.environ["OUT_PATH"])
-        cls.OutDir.mkdir(parents=True, exist_ok=True)
-        log_dir = cls.OutDir / "logs"
+        arg_out, arg_data = "OUT_PATH", "DATA_PATH"
+        for arg, desc in {arg_out: "output directory", arg_data: "path to test data"}.items():
+            assert arg in os.environ, arg + " (" + desc + ") must be among environmental variables"
+        cls.data_dir = Path(os.environ[arg_data])
+        cls.out_dir = Path(os.environ[arg_out])
+        cls.out_dir.mkdir(parents=True, exist_ok=True)
+        log_dir = cls.out_dir / "logs"
         log_dir.mkdir(parents=True, exist_ok=True)
         log_filename = str(log_dir / ("IntegrationTests_" + cls.__name__ + ".log"))
         logging.basicConfig(level=logging.DEBUG, force=True, filename=log_filename)

@@ -8,6 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
+      DATA_PATH: test/data
       OUT_PATH: test/data/out
     steps:
       - uses: actions/checkout@v1

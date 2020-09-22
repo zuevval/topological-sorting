@@ -34,7 +34,11 @@ pip install test/requirements.txt
 ```
 export OUT_PATH=test/data/out
 ```
+- set envirnonmental variable `DATA_PATH` equal to test data folder:
+```
+export DATA_PATH=test/data
+```
 - run all tests with `unittest.discover`:
 ```
-python -m unittest discover
+python3 -m unittest discover
 ```
