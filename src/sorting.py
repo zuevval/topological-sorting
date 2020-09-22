@@ -8,4 +8,4 @@ def sorting(graph: Graph) -> set:
     :param graph: vertices and edges of the graph to be traversed
     :return: sorted vertices
     """
-    return graph.vertices  # TODO implement algorithm
+    return set(range(graph.n_vertices))  # TODO implement algorithm

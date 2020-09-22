@@ -7,7 +7,7 @@ def main():
     input_argname, output_argname = "input", "output"
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--" + input_argname, required=True,
-                    help="input filename: graph (line 1 - list of vertices (integers), next lines - edges (int pairs)")
+                    help="input filename: graph (line 1 - int `n`, next lines - edges (pairs of int in {1;n-1})")
     ap.add_argument("-o", "--" + output_argname, required=False, help="output filename")
     args = vars(ap.parse_args())
     input_filename = args[input_argname]
