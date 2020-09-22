@@ -13,7 +13,7 @@ class TestFromFile(TestCaseWrapper):
         os.system("python3 -m src -i " + input_filename + " -o " + out_filename)
         answer = np.loadtxt(out_filename)
         expected_answer = np.loadtxt(expected_ans_filename)
-        assert (answer == expected_answer).all
+        assert (answer == expected_answer).all()
 
     def test_trivial(self):
         self.run_test("trivial")
