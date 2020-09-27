@@ -134,6 +134,6 @@ code coverage reports. You may download these files:
 simply remove the root folder of the repository from your filesystem
 
 ## Contact & support
-To report proboems (or for any questions whatsoever) create an [issue on GitHub](https://github.com/zuevval/topological-sorting/issues/new).
+To report problems (or for any questions whatsoever) create an [issue on GitHub](https://github.com/zuevval/topological-sorting/issues/new).
 
 Alternatively, you may e-mail me at [valera.zuev.zva@gmail.com](mailto:valera.zuev.zva@gmail.com)
