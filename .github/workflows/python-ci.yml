@@ -2,13 +2,16 @@
 
 name: Python CI
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master, develop ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      DATA_PATH: test/data
       OUT_PATH: test/data/out
     steps:
       - uses: actions/checkout@v1
@@ -19,17 +22,19 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r src/requirements.txt
           pip install -r test/requirements.txt
+          sudo apt-get install graphviz
       - name: Static checks
-        run: python -m flake8 && python -m mypy src # flake8 settings in [ROOT]/tox.ini
-      - name: Tests
-        run: coverage run --source=. -m unittest discover && coverage xml -o $OUT_PATH/coverage.xml
+        run: python -m flake8 && python -m mypy pipeline_manager # flake8 settings in [ROOT]/tox.ini
+      - name: Test with pytest & calculate coverage
+        run: coverage run --source=. -m pytest && coverage xml -o $OUT_PATH/coverage/coverage.xml
         if: success() || failure() # run even if the previous step fails
+      - name: Generate HTML code coverage report & display report in console
+        run: coverage html -d $OUT_PATH/coverage && coverage report
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
-          file: ${{ env.OUT_PATH }}/coverage.xml
+          file: ${{ env.OUT_PATH }}/coverage/coverage.xml
       - name: Publish tests artifacts
         uses: actions/upload-artifact@v1
         with:
