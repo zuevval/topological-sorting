@@ -26,9 +26,9 @@ def run_toposort_multisolution_test(
     ans = toposort(v, defaultdict(list, graph))
     ans_indices = {v: v_idx for v, v_idx in zip(ans, range(len(ans)))}
     for chain in expected_chains:
-        for v, v_next in zip(chain[:-1], chain[1:]):
+        for u, u_next in zip(chain[:-1], chain[1:]):
             assert (
-                ans_indices[v] < ans_indices[v_next]
+                ans_indices[u] < ans_indices[u_next]
             ), "one of the chains is ordered differently from the sorting"
 
 

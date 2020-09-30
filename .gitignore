@@ -4,6 +4,9 @@ out
 # JetBrains PyCharm
 .idea
 
+# mutmut cache
+.mutmut-cache
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
