@@ -3,6 +3,7 @@
 [![Actions Status](https://github.com/zuevval/topological-sorting/workflows/Python%20CI/badge.svg?branch=develop)](https://github.com/zuevval/topological-sorting/actions)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Code Coverage](https://codecov.io/gh/zuevval/topological-sorting/branch/develop/graph/badge.svg)](https://codecov.io/gh/zuevval/topological-sorting)
+[![CodeFactor](https://www.codefactor.io/repository/github/zuevval/topological-sorting/badge)](https://www.codefactor.io/repository/github/zuevval/topological-sorting)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![HitCount](http://hits.dwyl.com/zuevval/topological-sorting.svg)](http://hits.dwyl.com/zuevval/topological-sorting)
 
