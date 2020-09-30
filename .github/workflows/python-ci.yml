@@ -35,6 +35,12 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           file: ${{ env.OUT_PATH }}/coverage/coverage.xml
+      - name: Run mutational tests and save html report
+        run: |
+          mutmut run --paths-to-mutate test
+          mutmut html
+          mkdir -p $OUT_PATH/mutmut && mv html $OUT_PATH/mutmut
+          rm -f *.*XX *.*XX.* **/*.*XX **/*.*XX.* && rm -rf XX **/XX # remove mutated tests artifacts
       - name: Publish tests artifacts
         uses: actions/upload-artifact@v1
         with:

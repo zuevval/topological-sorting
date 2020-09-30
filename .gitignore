@@ -4,8 +4,10 @@ out
 # JetBrains PyCharm
 .idea
 
-# mutmut cache
+# mutmut cache & output
 .mutmut-cache
+html
+XX
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
