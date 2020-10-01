@@ -32,6 +32,13 @@ def run_toposort_multisolution_test(
             ), "one of the chains is ordered differently from the sorting"
 
 
+def get_out_path() -> Path:
+    out_arg = "OUT_PATH"
+    out_dir = Path(os.environ[out_arg]) if out_arg in os.environ else Path("./out")
+    os.system("mkdir -f " + str(out_dir))
+    return out_dir
+
+
 def visualize(graph: Dict[Vertex, List[Vertex]], name: str):
     graph = defaultdict(list, graph)
     vertices = graph.keys()
@@ -46,6 +53,5 @@ def visualize(graph: Dict[Vertex, List[Vertex]], name: str):
     for v in vertices:
         if v not in nonzero_degree_vertices:
             g.node(str(v))
-    out_arg = "OUT_PATH"
-    out_dir = Path(os.environ[out_arg]) if out_arg in os.environ else Path("./out")
+    out_dir = get_out_path()
     g.render(out_dir / (name + ".gv"))
