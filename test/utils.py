@@ -35,7 +35,7 @@ def run_toposort_multisolution_test(
 def get_out_path() -> Path:
     out_arg = "OUT_PATH"
     out_dir = Path(os.environ[out_arg]) if out_arg in os.environ else Path("./out")
-    os.system("mkdir -f " + str(out_dir))
+    out_dir.mkdir(parents=True, exist_ok=True)
     return out_dir
 
 
