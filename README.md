@@ -20,10 +20,6 @@ This is a Python package which features:
 git clone https://github.com/zuevval/topological-sorting.git
 cd topological-sorting
 ```
-- Install dependencies for command line application:
- ```shell script
- pip install src/requirements.txt
-```
 If you wish to **run tests and static code checks**, install also dependencies for tests:
 ```shell script
 pip install test/requirements.txt
