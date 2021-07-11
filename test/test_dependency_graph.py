@@ -23,3 +23,10 @@ def test_dependency_graph_strings():
     graph.add("fubar", ["foo", "bar"])
     assert graph.get_dependencies("fubar") == ["bar", "baz", "foo"]
     visualize(graph.graph, "graph_strings")
+
+
+def test_dependency_graph_repr():
+    graph = DependencyGraph()
+    graph.add("mee", ["mye"])
+    graph.add("moe")
+    assert repr(graph) == "DependencyGraph(mee : ['mye'], moe : [])"
