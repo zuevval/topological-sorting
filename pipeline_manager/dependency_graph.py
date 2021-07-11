@@ -8,6 +8,11 @@ class DependencyGraph:
     def __init__(self):
         self.graph: DefaultDict[Vertex, List[Vertex]] = defaultdict(list)
 
+    def __repr__(self):
+        return "DependencyGraph({})".format(
+            ", ".join("{} : {}".format(v, li) for v, li in self.graph.items())
+        )
+
     def add(self, v: Vertex, dependencies: Union[List[Vertex], None] = None):
         assert v not in self.graph, "could not add vertex: already in the graph"
         if dependencies is None:
